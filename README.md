@@ -32,15 +32,18 @@ Values for tiers between ALP's original 5 are linearly interpolated across APBS'
 
 ## Recommended APBS config (`config.json`)
 
-The preset tiers the **scope pool** so high‑end/magnified optics only appear at higher tiers (early tiers run red‑dots / basic optics). To avoid bots spawning with a bare optic mount or thread adapter, enable APBS's force‑fill options in `generalConfig`:
+The preset tiers the **scope pool** so high‑end/magnified optics only appear at higher tiers (early tiers run red‑dots / basic optics), and the build already prunes bare ring‑mounts and guarantees snipers/marksmen keep a tier‑appropriate optic.
+
+In `generalConfig`:
 
 ```jsonc
-"forceScopeSlot": true,
-"forceMuzzle": true,
+"forceScopeSlot": false,   // leave OFF: the pool already avoids bare scope mounts. Turning it
+                           // ON force-fills every scope slot, which over-scopes scavs/low bots.
+"forceMuzzle": true,       // optional: forces a muzzle device when a muzzle slot exists.
 "forceChildrenMuzzle": true
 ```
 
-Note: APBS tier is driven by **player level** (`TierData.json`) and is shared by all bot types in a raid, so scope tiering scales with wipe progression (early wipe → everyone runs basic optics; late wipe → high‑end available). It is not a per‑bot‑type restriction.
+Note: `forceMuzzle`/`forceChildrenMuzzle` are global too — if you want scavs to run bare barrels (no forced suppressors), set those to `false` as well. APBS tier is driven by **player level** (`TierData.json`) and shared by all bot types in a raid, so scope tiering scales with wipe progression; it is not a per‑bot‑type restriction.
 
 ## Credits
 
