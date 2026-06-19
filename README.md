@@ -30,6 +30,18 @@ Values for tiers between ALP's original 5 are linearly interpolated across APBS'
    ```
 4. Start the server. You should see `[APBS] Preset Loaded: ALP Revived` in the log.
 
+## Recommended APBS config (`config.json`)
+
+The preset tiers the **scope pool** so high‑end/magnified optics only appear at higher tiers (early tiers run red‑dots / basic optics). To avoid bots spawning with a bare optic mount or thread adapter, enable APBS's force‑fill options in `generalConfig`:
+
+```jsonc
+"forceScopeSlot": true,
+"forceMuzzle": true,
+"forceChildrenMuzzle": true
+```
+
+Note: APBS tier is driven by **player level** (`TierData.json`) and is shared by all bot types in a raid, so scope tiering scales with wipe progression (early wipe → everyone runs basic optics; late wipe → high‑end available). It is not a per‑bot‑type restriction.
+
 ## Credits
 
 - Tiering logic ported from **AlgorithmicLevelProgression** by Andrewgdewar.
