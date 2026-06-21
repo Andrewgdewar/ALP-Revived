@@ -73,7 +73,7 @@
         "stockButtpadChance": 10,
         "forceDustCover": false,
         "forceScopeSlot": false,
-        "forceMuzzle": true,
+        "forceMuzzle": false,
         "muzzleChance": [
             10,
             25,
@@ -83,7 +83,7 @@
             75,
             75
         ],
-        "forceChildrenMuzzle": true,
+        "forceChildrenMuzzle": false,
         "forceWeaponModLimits": true,
         "scopeLimit": 2,
         "tacticalLimit": 1,
